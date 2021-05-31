@@ -37,18 +37,25 @@ const guesser = () => {
   while (min <= max) {
     guess = Math.round((min + max) / 2);
     // Add your code below here ONLY!
+    //Added two inner functions to guess if the user's guess
+    //is higher or lower than the computer's initial guess
     function decrease(num) {  
       num--;
-      var input = confirm("Did you think of " + num); 
+      var input = confirm("Did you think of " + num +  " ?"); 
       if(input == false) {
         decrease(num);
       } else{
         alert("computer has guessed it");
-      }    
-      
+      }      
     }
     function increase(num) {         // inner function
-      return num++;
+      num++;
+      var input = confirm("Did you think of " + num +  " ?"); 
+      if(input == false) {
+        increase(num);
+      } else{
+        alert("computer has guessed it");
+      }
     }
 
     var userinput = confirm("Did you think of " + guess + " ?");
@@ -65,7 +72,8 @@ const guesser = () => {
         var input2 = confirm("Did you think of ? " + max);
       }else if(input == true){
         min = guess;
-        min++;
+        increase(min);
+       // min++;
       }
     }
 
