@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Inline/External Examples</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body>
+    <p>
+      Buttons on this form only effect the output field.
+    </p>
+    <form id="exampleForm" >
+      <input  type="button" id="inline-button1" form="exampleForm"
+      title="inline-button1" value="Inline Example Button1" onclick="exampleForm.output.value=this.id+' was clicked.';">
+      
+      <label>Output:</label>
+      <input type="text" id="output"  size="80" readonly>
+    </form>
+    <!-- External Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
